@@ -56,33 +56,14 @@ body {
   -webkit-box-orient: vertical;
 }
 
-.user-info {
-  min-width: 800px;
-}
+// .user-info {
+//   min-width: 800px;
+// }
 
-@media screen and (min-width: 768px) {
-  
-  .card-column {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-
-  
-  .card-column:last-child {
-    flex-grow: 1;
-  }
-}
-
-
-@media screen and (min-width: 992px) {
-  .banner {
-    width: 75%;
-  }
-
-  .card {
-    flex: 0 0 33.333%;
-    max-width: 33.333%;
-  }
-} 
-
+// @media only screen and (max-width: 768px) {
+//   /* For mobile phones: */
+//   body {
+//     width: 100%;
+//   }
+// }
 
