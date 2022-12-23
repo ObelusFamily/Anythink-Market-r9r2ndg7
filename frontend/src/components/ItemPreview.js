@@ -4,6 +4,8 @@ import agent from "../agent";
 import { connect } from "react-redux";
 import { ITEM_FAVORITED, ITEM_UNFAVORITED } from "../constants/actionTypes";
 
+const topSeller = "/verified_seller.svg"
+const placeholder = "/placeholder.png"
 const mapDispatchToProps = (dispatch) => ({
   favorite: (slug) =>
     dispatch({
@@ -37,7 +39,7 @@ const ItemPreview = (props) => {
     >
       <img
         alt="item"
-        src={item.image}
+        src={item.image || placeholder}
         className="card-img-top item-img"
         style={{ borderRadius: "20px" }}
       />
@@ -53,6 +55,10 @@ const ItemPreview = (props) => {
               alt={item.seller.username}
               className="user-pic rounded-circle pr-1"
             />
+            <img
+              src={topSeller}
+            />
+            <p className="text-white">TOP SELLER</p>
           </Link>
           <button className="btn btn-outline-secondary" onClick={handleClick}>
             <i className="ion-heart"></i> {item.favoritesCount}
