@@ -6,6 +6,7 @@ import { ITEM_FAVORITED, ITEM_UNFAVORITED } from "../constants/actionTypes";
 
 const topSeller = "/verified_seller.svg"
 const placeholder = "/placeholder.png"
+
 const mapDispatchToProps = (dispatch) => ({
   favorite: (slug) =>
     dispatch({
@@ -31,6 +32,31 @@ const ItemPreview = (props) => {
     }
   };
 
+  function UserVerified() {
+    return (
+      <div>
+        <img
+          src={topSeller}
+          alt="Top Seller"
+        />
+        <p>
+          TOP SELLER
+        </p>
+      </div>
+      ); 
+  }
+
+  const verifiedSeller = (props) =>{
+    // const isVerified = props.user;
+    // const user = props.user;
+    const isVerified = props.isVerified;
+
+    if (isVerified) {
+     return <UserVerified /> 
+  }
+  };
+
+
   return (
     <div
       className="card bg-dark border-light p-3"
@@ -55,10 +81,10 @@ const ItemPreview = (props) => {
               alt={item.seller.username}
               className="user-pic rounded-circle pr-1"
             />
-            <img
-              src={topSeller}
-            />
-            <p className="text-white">TOP SELLER</p>
+          <div>
+            {verifiedSeller} 
+             
+          </div>
           </Link>
           <button className="btn btn-outline-secondary" onClick={handleClick}>
             <i className="ion-heart"></i> {item.favoritesCount}
